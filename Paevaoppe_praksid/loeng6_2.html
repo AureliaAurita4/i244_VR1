@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>Loeng 6 - jQuery</title>
+		<meta charset="utf-8">
+		<script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
+		
+		<script>
+			$(document).ready(function() {
+				$("li").each(function() {
+					$(this).css("background-color", $(this).html());
+				});
+				console.log("pilt oli enne:", $("img").attr("src"));
+				$("img").attr("src", "owl2.jpeg");
+				
+				$("p").each(function(){
+					if($(this).hasClass("mingi")) {
+						$(this).css("font-style", "italic");
+					}
+				});
+				
+				$("img").click(function() {
+					if($("img").attr("src") == "owl.jpeg"){
+						$("img").attr("src", "owl2.jpeg");
+					} else {
+						$("img").attr("src", "owl.jpeg");
+					}
+				});
+				
+				$("li").on({
+					mouseenter: function(){
+						$(this).css("background-color", "white")
+						},
+					mouseleave: function(){
+						$(this).css("background-color", $(this).html());
+						},
+					click: function(){
+						$(this).css("color", "blue");
+					}
+				});
+				
+				$("p").click(function() {
+					$(this).hide(1000);
+				});
+			});
+		</script>
+	</head>
+	
+	<body>
+		<h1 id="pealkiri">jQuery tutvustus</h1>
+		
+		<ul>
+			<li>red</li>
+			<li>yellow</li>
+			<li>green</li>
+		</ul>
+		
+		<img src="owl.jpeg" alt="a cute owl" height="100px"/>
+		
+		<button onclick="$('p').toggle(1000);">Nupp</button>
+		
+		<p id="esimene">tekst 1 </p>
+		<p>tekst 2</p>
+		<p class="mingi">tekst 3</p>
+		<p>tekst 4</p>
+		<p class="mingi">tekst 5</p>
+		
+	</body>
+	
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Koduülesanne 6</title>
+		
+		<style type="text/css">
+		.active { 
+			background: skyblue;
+			padding: 10px;
+		}
+		</style>
+		
+		<script type="text/javascript" src="http://code.jquery.com/jquery-3.2.0.min.js"></script>
+		
+		<script type="text/javascript">
+			$(document).ready(function() {				
+				
+				$("li").first().addClass('active');
+				
+				$("#next").click(function() {
+					if($(".active").is(':last-child')){
+						$("li").removeClass('active');
+						$("li").first().addClass('active');
+					}else {
+						
+						$(".active").next().addClass('active');
+						$(".active").prev().removeClass('active');
+					}
+				});
+				
+				$("#prev").click(function() {
+					if($(".active").is(':first-child')){
+						$("li").first().removeClass('active');
+						$("li").last().addClass('active');
+					}else {
+						$(".active").next().removeClass('active');
+						$(".active").prev().addClass('active');
+					}
+				});
+			});
+		</script>
+		
+	</head>
+	
+	<body>
+	
+		<button id="next">edasi</button>
+		<button id="prev">tagasi</button>
+
+		<ul>
+			<li>esimene</li>
+			<li>teine</li>
+			<li>kolmas</li>
+			<li>neljas</li>
+		</ul>
+
+	</body>
+</html>

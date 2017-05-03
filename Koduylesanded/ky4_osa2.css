@@ -1,0 +1,27 @@
+.bead {
+	background: yellow;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	box-shadow: 0px -11px 23px -3px grey inset;
+	float: right;
+	margin-top: -25px;
+}
+
+.row {
+	clear: both;
+	border: 2px solid grey;
+	border-style: groove;
+	margin-top: 50px;
+}
+
+#raam {
+	width: 800px;
+	border: 10px solid rgb(133, 133, 180);
+	border-style: ridge;
+	padding-bottom: 50px;
+}
+
+.bead2 {
+	float: left;
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>Loeng 6 - jQuery</title>
+		<meta charset="utf-8">
+		
+		<script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
+		
+		<script>
+			$(document).ready(function() {				
+				$("#esimene").click(function() {				
+					$.get("ookull1.inc", function(data){
+						$("#sisu").html(data);
+					}, "html")
+				});
+							
+				$("#teine").click(function() {				
+					$.get("ookull2.inc", function(data){
+						$("#sisu").html(data);
+					}, "html")
+				});
+			});
+		</script>
+	</head>
+	
+	<body>
+		<button id="esimene">Öökull 1</button>
+		<button id="teine">Öökull 2</button>
+		<div id="sisu">
+			algne sisu peab olema ajax poolt üle kirjutatud
+		</div>
+	</body>
+</html>

@@ -1,0 +1,14 @@
+<h3>Fotod</h3>
+$pildid = array(
+    "pildid/nameless1.jpg",
+    "pildid/nameless2.jpg",
+    "pildid/nameless3.jpg",
+    "pildid/nameless4.jpg",
+    "pildid/nameless5.jpg",
+    "pildid/nameless6.jpg");
+	
+<div id="gallery">
+	<?php foreach($pildid as $i=>$pilt):?>
+		<img src="pildid/nameless<?php echo $i+1;?>.jpg" alt="nimetu <?php echo $i+1;?>" />
+	<?php endforeach; ?>
+</div>

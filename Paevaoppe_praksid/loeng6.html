@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>Loeng 6 - jQuery</title>
+		<meta charset="utf-8">
+		<script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
+		
+		<script>
+		$(document).ready(function() {
+			//console.log($("#esimene"));
+			//console.log($(".mingi"));
+			$("#esimene").css("color", "green")
+			console.log($("#esimene").css("color"));
+			
+			$(".mingi").css({
+				"color": "red",
+				"font-weight": "bold",
+				"font-size": "20px"
+			});
+			
+			$(".mingi").first().css("background-color", "skyblue");
+			
+			$("#teine").next().css("background-color", "skyblue");
+			$("#teine").prev().css("background-color", "pink");
+		});
+			
+		</script>
+	</head>
+	
+	<body>
+		<h1 id="pealkiri">jQuery tutvustus</h1>
+		
+		<ul>
+			<li>red</li>
+			<li id="teine">red</li>
+			<li>red</li>
+		</ul>
+		
+		<p id="esimene">tekst</p>
+		<p>tekst</p>
+		<p class="mingi">tekst</p>
+		<p>tekst</p>
+		<p class="mingi">tekst</p>
+		
+	</body>
+	
+</html>

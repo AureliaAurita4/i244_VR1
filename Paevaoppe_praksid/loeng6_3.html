@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>Loeng 6 - jQuery</title>
+		<meta charset="utf-8">
+		
+		<style>
+			img{
+				position: absolute;
+				top: 0;
+				right: 0;
+			}
+			
+			body {
+				background-image: url("forest.jpeg");
+				background-repeat: no-repeat;
+				background-position: left top;
+				background-attachment: fixed;
+				background-size: 100%;
+			}
+		</style>
+		
+		<script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
+		
+		<script>
+			$(document).ready(function() {				
+				$("img").click(function() {
+					//$(this).css({"top": (Math.random() * 300) + "px", "right": (Math.random() * 500) + "px"});
+					
+					$(this).animate({
+					"top": (Math.random() * 300) + "px", "right": (Math.random() * 500) + "px"
+					},
+						1000
+					);
+				});
+				
+			});
+		</script>
+	</head>
+	
+	<body>
+		<h1 id="pealkiri">jQuery tutvustus</h1>
+		
+		
+		<img src="owl.jpeg" alt="a cute owl" height="100"/>
+		
+	</body>
+	
+</html>

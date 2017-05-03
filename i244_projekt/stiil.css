@@ -1,0 +1,31 @@
+div {
+	margin: 10px;
+	border: none;
+}
+
+.button {
+	list-style-type: none;
+	float: left;
+	margin-right: 10px;
+	padding: 0;
+}
+
+select {
+	width: 13em;
+}
+
+.vajalik {
+	color: red;
+	
+}
+
+h1 {
+	font-family: 'Galdeano', sans-serif;
+	font-size:20px;
+	line-height:20px;
+	color:#262626;
+	font-weight:700;
+	text-transform:uppercase;
+	margin-top:-10px;
+	display:inline-block;
+}
