@@ -1,6 +1,40 @@
+body {
+	background: #090909;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	line-height:1.2em;
+	color:#505050;
+	min-width:1027px;
+}
+
+html, body {
+	height:100%;
+}
+
 div {
 	margin: 10px;
 	border: none;
+}
+
+.splash_pic {
+	background:url(Pildid/svadba_viki_web_splash.jpg) no-repeat center 0;
+	position:relative;
+	height:700px
+}
+
+.content_pic {
+	background:url(Pildid/svadba_viki_web_splash.jpg) no-repeat center 0;
+	position:relative;
+	height:466px
+}
+
+.line1 {
+	background:url(Pildid/pic_line.png) repeat-x center 0;
+	height:11px;
+	position:absolute;
+	bottom:0;
+	width:100%;
+	z-index:55;
 }
 
 .button {
@@ -16,10 +50,57 @@ select {
 
 .vajalik {
 	color: red;
-	
 }
 
+/*h1 {
+	font-family: 'Galdeano', sans-serif;
+	font-size:20px;
+	line-height:20px;
+	color:#262626;
+	font-weight:700;
+	text-transform:uppercase;
+	margin-top:10px;
+	text-align:center;
+}*/
+
 h1 {
+	display:inline-block;
+	position:relative;
+	z-index:99;
+	padding:36px 0 30px 0;
+	margin-left:15px
+}
+#logo {
+	height:64px;
+	width:474px;
+	background:url(Pildid/logo.png) no-repeat center 0;
+	text-indent:-5000px;
+	display:block;
+	margin-left: auto;
+    margin-right: auto;
+	margin-top: 30px;
+}
+h2 {
+	font-family: 'Righteous', cursive;
+	font-size:48px;
+	line-height:58px;
+	text-transform:uppercase;
+	display:block;
+	padding-bottom:18px;
+	color:#c7c7c7;
+}
+h3 {
+	font-family: 'Righteous', cursive;
+	font-size:48px;
+	line-height:58px;
+	text-transform:uppercase;
+	display:block;
+	padding:20px 0 0 35px;
+	color:#fff;
+	display:inline-block;
+}
+
+h4 {
 	font-family: 'Galdeano', sans-serif;
 	font-size:20px;
 	line-height:20px;
@@ -28,4 +109,43 @@ h1 {
 	text-transform:uppercase;
 	margin-top:-10px;
 	display:inline-block;
+}
+
+#menu {
+	margin:0px;
+	padding:0px;
+	/*background:blue;*/
+}
+
+#menu li {
+	display:inline-block;
+}
+
+#menu a {
+	color: white;
+	text-transform:uppercase;
+	font-weight:bold;
+	display:inline-block;
+	padding: 5px;
+	text-decoration:none;
+}
+
+#menu a:hover {
+	color:#fea800;
+}
+
+#wrap {
+	width:300px;
+	margin:auto;
+	margin-top: 40px;
+	
+}
+
+footer {
+	margin:7px 3px;
+	text-align:center;
+	text-transform:uppercase;
+	color: #262626;
+	font-family: 'Galdeano', sans-serif;
+	font-weight:bold;
 }

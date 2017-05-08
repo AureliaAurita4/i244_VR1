@@ -1,0 +1,19 @@
+<?php
+$user = "test";
+$pass = "t3st3r123";
+$db = "test";
+$host = "localhost";
+
+$link = mysqli_connect($host, $user, $pass, $db) or die("ei saanud ühendatud - ");
+
+mysqli_query($link, "SET CHARACTER SET UTF8");
+mysqli_error($link);
+
+$sql = "SELECT * FROM sjugai_loomaaed";
+$result = mysqli_query($link, $sql) or die($sql . " - " . mysqli_error($link));
+
+while ($rida = mysqli_fetch_assoc($result)){
+	echo "looma nimi on: {$rida['nimi']}, ta on {$rida['vanus']} aastat vana ja asub {$rida['puur']}. puuris.<br>";
+}
+mysqli_free_result($result);
+?>
