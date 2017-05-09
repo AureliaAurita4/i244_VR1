@@ -47,7 +47,6 @@ function kuva_loomad(){
 }
 
 
-
 function kuva_loom(){
 	global $link;
 	if (empty($_SESSION["roll"])){ // info logitud kasutajatele
@@ -74,7 +73,6 @@ function kuva_loom(){
 	} else { //loom määramata
 		header("Location: ?mode=loomad");
 	}
-	
 }
 
 

@@ -16,6 +16,11 @@ div {
 	border: none;
 }
 
+#hinnapak{
+	margin-bottom: 20px;
+	text-align: center;
+}
+
 .splash_pic {
 	background:url(Pildid/svadba_viki_web_splash.jpg) no-repeat center 0;
 	position:relative;
@@ -40,8 +45,16 @@ div {
 .button {
 	list-style-type: none;
 	float: left;
-	margin-right: 10px;
+	
+	margin-left: 10px;
 	padding: 0;
+}
+
+#buttons{
+	margin: auto;
+	position:relative;
+    top:50%; 
+    left:40%;
 }
 
 select {
@@ -107,8 +120,13 @@ h4 {
 	color:#262626;
 	font-weight:700;
 	text-transform:uppercase;
-	margin-top:-10px;
 	display:inline-block;
+	
+}
+
+header{
+	text-align: center;
+	margin-top: 10px;
 }
 
 #menu {
@@ -138,6 +156,12 @@ h4 {
 	width:300px;
 	margin:auto;
 	margin-top: 40px;
+	
+}
+
+#hinna_vorm {
+	margin: auto;
+	text-align:center;
 	
 }
 

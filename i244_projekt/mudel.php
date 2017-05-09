@@ -2,15 +2,27 @@
 
 function settingCookies(){
 	if(empty($_COOKIE["mingiKasutaja"])){
-		setcookie("mingiKasutaja", $_POST["nimi"], time() + 60 * 15, "/");
+		setcookie("mingiKasutaja", time(), time() + 60 * 15, "/");
 	}
 }
 
-function andmeteKontroll(){
+function serverigaYhendamine(){
+	global $link;
+	$user = "test";
+	$pass = "t3st3r123";
+	$db = "test";
+	$host = "localhost";
 	
-	global $nimi, $firma, $telefon, $email, $muuYritus, $koht, $hind, $kommentaar;
+	$link = mysqli_connect($host, $user, $pass, $db) or die("Ühendust ei ole");
+	mysqli_query($link, "SET CHARACTER SET UTF8");
+}
+
+function andmeteSaatmine(){
+	
+	global $nimi, $firma, $telefon, $email, $muuYritus, $koht, $hind, $kommentaar, $kuup2ev, $yritus;
 	global $nimiError, $emailError, $telefonError, $telefonError2, $kuup2evError;
 	global $errors;
+	global $link;
 	$errors = Array();
 
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -28,7 +40,7 @@ function andmeteKontroll(){
 			$email = test($_POST["email"]);
 		}
     
-	if (empty($_POST["telefon"])) {
+		if (empty($_POST["telefon"])) {
 			$telefonError = "Mis on Teie telefon?";
 			$errors[] = $telefonError;
 		} else if (!is_numeric($_POST["telefon"])) {
@@ -47,8 +59,24 @@ function andmeteKontroll(){
 		
 		// KUI KÕIK KORRAS...
 		if(empty($errors)){
-			header("Location: kontroller.php?mode=ok");
-			exit(0);
+			$nimi = mysqli_real_escape_string($link, $_POST["nimi"]);
+			$firma = mysqli_real_escape_string($link, $_POST["firma"]);
+			$telefon = mysqli_real_escape_string($link, $_POST["telefon"]);
+			$email = mysqli_real_escape_string($link, $_POST["email"]);
+			$yritus = mysqli_real_escape_string($link, $_POST["yritus"]);
+			$muuYritus = mysqli_real_escape_string($link, $_POST["muuYritus"]);
+			$koht = mysqli_real_escape_string($link, $_POST["koht"]);
+			$kuup2ev = mysqli_real_escape_string($link, $_POST["kuup2ev"]);
+			$hind = mysqli_real_escape_string($link, $_POST["hind"]);
+			$kommentaar = mysqli_real_escape_string($link, $_POST["kommentaar"]);
+			
+			$sql = "INSERT INTO 0tsirkus (nimi, firma, telefon, email, yritus, muuYritus, koht, kuup2ev, hind, kommentaar) VALUES ('$nimi', '$firma', '$telefon', '$email', '$yritus', '$muuYritus', '$koht', '$kuup2ev', '$hind', '$kommentaar')";
+			$result = mysqli_query($link, $sql) or die($sql . " - " . mysqli_error($link));;
+			
+			if($result){
+				header("Location: kontroller.php?mode=ok");
+				exit(0);
+			}
 		}
 	}
 }
@@ -59,7 +87,6 @@ function test($data) {
 	$data = htmlspecialchars($data);
 	return $data;
 }
-
 
 ?>
 
