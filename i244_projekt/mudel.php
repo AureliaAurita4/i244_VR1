@@ -70,8 +70,8 @@ function andmeteSaatmine(){
 			$hind = mysqli_real_escape_string($link, $_POST["hind"]);
 			$kommentaar = mysqli_real_escape_string($link, $_POST["kommentaar"]);
 			
-			$sql = "INSERT INTO 0tsirkus (nimi, firma, telefon, email, yritus, muuYritus, koht, kuup2ev, hind, kommentaar) VALUES ('$nimi', '$firma', '$telefon', '$email', '$yritus', '$muuYritus', '$koht', '$kuup2ev', '$hind', '$kommentaar')";
-			$result = mysqli_query($link, $sql) or die($sql . " - " . mysqli_error($link));;
+			$sql = "INSERT INTO Svetlana_Jugai_10142864 (nimi, firma, telefon, email, yritus, muuYritus, koht, kuup2ev, hind, kommentaar) VALUES ('$nimi', '$firma', '$telefon', '$email', '$yritus', '$muuYritus', '$koht', '$kuup2ev', '$hind', '$kommentaar')";
+			$result = mysqli_query($link, $sql) or die($sql . " - " . mysqli_error($link));
 			
 			if($result){
 				header("Location: kontroller.php?mode=ok");
