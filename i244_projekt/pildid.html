@@ -2,14 +2,29 @@
 	<div class="line1"> </div>
 </div>
 
-<form action="kontroller.php?mode=pildid" method="POST">
-
-	<div class="vajalik">
-		<input id="nimi" type="text" name="user_id" placeholder="Kasutaja nimi" value="<?php echo isset($nimi) ? $nimi : ''; ?>"><span class="error">* <?php echo isset($nimiError) ? $nimiError : ''; ?></span>
-	</div>
-	
-	<div>
-		<input type="text" name="firma" placeholder="Firma nimi" value="<?php echo isset($firma) ? $firma : ''; ?>">
-	</div>
-	
-</form>
+<section class="content_holder">
+	<form action="kontroller.php?mode=pildid" method="POST">
+		
+		<div id="warp">
+			<ul id="sisselogimine">
+				<li>
+					<div class="vajalik">
+						<input id="nimi" type="text" name="user_id" placeholder="Kasutaja nimi" value="<?php echo isset($nimi) ? $nimi : ''; ?>"><span class="error"></span>
+					</div>
+				</li>
+				
+				<li>
+					<div>
+						<input type="password" name="parool" placeholder="Parool" value="<?php echo isset($firma) ? $firma : ''; ?>">
+					</div>
+				</li>
+				
+				<li class="button">
+					<div id="buttons">
+						<button type="submit">Logi sisse</button>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</form>
+</section>
