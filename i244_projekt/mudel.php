@@ -53,12 +53,13 @@ function andmeteSaatmine(){
 		if (empty($_POST["kuup2ev"])) {
 			$kuup2evError = "Valige, palun, kuupäeva";
 			$errors[] = $kuup2evError;
-		} else {
+		} else if (var_dump(checkdate($_POST['kuup2ev']))) {
 			$kuup2ev = test($_POST["kuup2ev"]);
 		}
 		
 		// KUI KÕIK KORRAS...
 		if(empty($errors)){
+			
 			$nimi = mysqli_real_escape_string($link, $_POST["nimi"]);
 			$firma = mysqli_real_escape_string($link, $_POST["firma"]);
 			$telefon = mysqli_real_escape_string($link, $_POST["telefon"]);
