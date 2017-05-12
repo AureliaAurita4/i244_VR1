@@ -172,4 +172,19 @@ footer {
 
 #sisselogimine {
 	float: right;
+	margin-top: 0;
+}
+
+#galerii {
+	margin-top: 20px;
+	/*border-spacing: 5px; */
+}
+
+tr, td {
+	padding: 8px;
+}
+
+tr img {
+	width: 200px;
+	height:128px;
 }
