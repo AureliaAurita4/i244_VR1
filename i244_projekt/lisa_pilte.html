@@ -1,0 +1,52 @@
+<div class="content_pic">
+	<div class="line1"> </div>
+</div>
+
+<section class="content_holder">
+
+	<header>	
+		<h4>Uute piltide lisamine</h4>
+	</header>
+	
+		
+	
+	<form action="kontroller.php?mode=lisa_pilte" method="POST">
+		<div>
+			<ul id="sisselogitud">
+				<li>
+					<div>
+						<p>Tere, admin!</p>
+					</div>
+				</li>
+					
+				<li class="button_logout">
+					<div id="buttons_logout">
+						<button type="submit">Logi välja</button>
+					</div>
+				</li>
+			</ul>
+		</div>
+	
+		<table>
+			<tr>
+				<td>Nimetus</td>
+				<td><input type="text" name="nimetus"/></td>
+			</tr>
+			<tr>
+				<td>Ürituse koht</td>
+				<td><input type="text" name="yrituse_koht"/></td>
+			</tr>
+			<tr>
+				<td>Kuupäev<td>
+				<td><input type="date" name="kuup2ev"/></td>
+			</tr>
+			<tr>
+				<td>Pilt</td>
+				<td><input type="file" name="fail"/></td>
+			</tr>
+			<tr>
+				<td colspan="2"><input type="submit" value="Lisa"/></td>
+			</tr>
+		</table>
+	</form>
+</section>

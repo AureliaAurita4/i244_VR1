@@ -1,5 +1,4 @@
 <div class="content_pic">
-	<div class="line1"> </div>
 </div>
 
 <section class="content_holder">
@@ -14,13 +13,13 @@
 			<ul id="sisselogimine">
 				<li>
 					<div class="vajalik">
-						<input id="nimi" type="text" name="user_id" placeholder="Kasutaja nimi" value="<?php echo isset($nimi) ? $nimi : ''; ?>"><span class="error"></span>
+						<input id="nimi" type="text" name="user_id" placeholder="Kasutaja nimi" value="<?php echo isset($kasutaja) ? $kasutaja : ''; ?>"><span class="error"><?php echo isset($kasutajaError) ? $kasutajaError : ''; ?></span>
 					</div>
 				</li>
 				
 				<li>
 					<div>
-						<input type="password" name="parool" placeholder="Parool" value="<?php echo isset($firma) ? $firma : ''; ?>">
+						<input type="password" name="parool" placeholder="Parool" value="<?php echo isset($parool) ? $parool : ''; ?>"><span class="error"><?php echo isset($paroolError) ? $paroolError : ''; ?></span>
 					</div>
 				</li>
 				
@@ -35,48 +34,15 @@
 	
 	<table id="galerii" align="center">
 	
-		<tr>
-			<td>
-				<a href=""><img src="Pildid/web1.jpg" alt="Pulmad restoraanis Ruhe, Kaberneeme"></a>
-			</td>
-			
-			<td>
-				<a href=""><img src="Pildid/Jaan_web.jpg" alt="Jaanipäev 2016"></a>
-			</td>
-			
-			<td>
-				<a href=""><img src="Pildid/lennusaadam.jpg" alt="Firmapidu, Lennusaadam"></a>
-			</td>
-			
-			<td>
-				<a href=""><img src="Pildid/beer_house.jpg" alt="TR at Beer House"></a>
-			</td>
-			
-			<td>
-				<a href=""><img src="Pildid/ruhe.jpg" alt="Pulmad restoraanis Ruhe, Kaberneeme"></a>
-			</td>
-		</tr>
+	<?php if (!empty($pildid)):
+	foreach($pildid as $id=>$pilt1):
+	?>
+	
+		<td><img class="shadow" src="<?php echo htmlspecialchars($pilt1['pilt']);?>" alt="<?php echo htmlspecialchars($pilt1['nimi']);?>" onclick=""></td>
 		
-		<tr>
-			<td>
-				<a href=""><img src="Pildid/Pirita_spa.jpg" alt="Sünnipäeva pidu Pirita Top Spaas"></a>
-			</td>
-			
-			<td>
-				<a href=""><img src="Pildid/Thumbs/p4_pic1_thumb.jpg" alt="TR at Mad Murphy's"></a>
-			</td>
-			
-			<td>
-				<a href=""><img src="Pildid/Thumbs/p4_pic2_thumb.jpg" alt="Aastavahetuspidu 2012"></a>
-			</td>
-			
-			<td>
-				<a href=""><img src="Pildid/Thumbs/p4_pic3_thumb.jpg" alt="TR at Beer House"></a>
-			</td>
-			
-			<td>
-				<a href=""><img src="Pildid/Thumbs/p4_pic11_thumb.jpg" alt="Firmapidu Arhetiktuuri muuseumis"></a>
-			</td>
-		</tr>		
+	<?php endforeach;
+	endif;
+	?>
+	
 	</table>
 </section>

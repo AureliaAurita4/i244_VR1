@@ -177,7 +177,6 @@ footer {
 
 #galerii {
 	margin-top: 20px;
-	/*border-spacing: 5px; */
 }
 
 tr, td {
@@ -187,4 +186,9 @@ tr, td {
 tr img {
 	width: 200px;
 	height:128px;
+}
+
+.shadow: hover {
+	box-shadow: 10px 10px 5px grey;
+	transition: 0.3s;
 }

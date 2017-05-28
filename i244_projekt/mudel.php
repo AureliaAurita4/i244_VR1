@@ -77,6 +77,8 @@ function andmeteSaatmine(){
 			if($result){
 				header("Location: kontroller.php?mode=ok");
 				exit(0);
+				mysqli_free_result();
+				mysqli_close();
 			}
 		}
 	}
@@ -87,6 +89,46 @@ function test($data) {
 	$data = stripslashes($data);
 	$data = htmlspecialchars($data);
 	return $data;
+}
+
+function login(){
+	global $kasutaja, $parool;
+	global $kasutajaError, $paroolError;
+	$errors = array();
+	
+	if($_SERVER["REQUEST_METHOD"] == "POST"){
+		if(empty($_POST["kasutaja"]) || htmlspecialchars($_POST["kasutaja"]) != "TJ"){
+			$kasutajaError = "Vale kasutajanimi!";
+			$errors[] = $kasutajaError;
+		}
+		if(empty($_POST["parool"]) || htmlspecialchars($_POST["parool"]) != "TJP"){
+			$paroolError = "Vale parool!";
+			$errors[] = $paroolError;
+		}
+		
+		if(empty($errors)){
+			if(htmlspecialchars($_POST["kasutaja"]) == "TJ" && htmlspecialchars($_POST["parool"]) == "TJP"){
+				header("Location: kontroller.php?mode=sisselogitud");
+				exit(0);				
+			}
+		}
+	}
+}
+
+function kuva_pilte() {
+	global $link;
+	$pildid = Array();
+	
+	$sql = "SELECT id, nimi, pilt FROM Svetlana_Jugai_pildid_10142864";
+	$result = mysqli_query($link, $sql) or die("Pilte ei ole võimalik kuvada.");
+	
+	$ridu = mysqli_num_rows($result);
+	
+	for($i = 0; $i < $ridu; $i++) {
+		$pildid[] = mysqli_fetch_assoc($result);
+		
+	}
+	include_once("pildid.html");
 }
 
 ?>

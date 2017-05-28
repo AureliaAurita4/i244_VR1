@@ -1,5 +1,8 @@
 <?php
 require_once("mudel.php");
+session_start();
+settingCookies();
+serverigaYhendamine();
 
 $mode="";
 if(!empty($_GET["mode"])){
@@ -10,12 +13,19 @@ include_once("head.html");
 
 switch($mode){	
 	case "pildid":
-		include("pildid.html");
+		kuva_pilte();
+	break;
+	
+	case "lisa_pilte":
+		include("lisa_pilte.html");
+	break;
+	
+	case "sisselogitud":
+		
+		include("login.html");
 	break;
 	
 	case "hinnapakkumine":
-		settingCookies();
-		serverigaYhendamine();
 		andmeteSaatmine();
 		include("hinnapakkumine.html");
 	break;
