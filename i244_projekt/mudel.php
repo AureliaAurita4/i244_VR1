@@ -117,6 +117,7 @@ function login(){
 
 function kuva_pilte() {
 	global $link;
+	global $ridu;
 	$pildid = Array();
 	
 	$sql = "SELECT id, nimi, pilt FROM Svetlana_Jugai_pildid_10142864";
@@ -128,7 +129,7 @@ function kuva_pilte() {
 		$pildid[] = mysqli_fetch_assoc($result);
 		
 	}
-	include_once("pildid.html");
+	include_once("pildid2.html");
 }
 
 ?>
