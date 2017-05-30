@@ -1,12 +1,12 @@
 <?php
 
-function settingCookies(){
+function settingCookies(){ // Seadistame cookies
 	if(empty($_COOKIE["mingiKasutaja"])){
 		setcookie("mingiKasutaja", time(), time() + 60 * 15, "/");
 	}
 }
 
-function serverigaYhendamine(){
+function serverigaYhendamine(){ // Loome serveriga ühendust
 	global $link;
 	$user = "test";
 	$pass = "t3st3r123";
@@ -17,7 +17,7 @@ function serverigaYhendamine(){
 	mysqli_query($link, "SET CHARACTER SET UTF8");
 }
 
-function andmeteSaatmine(){
+function andmeteSaatmine(){ // Valideerime vormisse sisestatud andmeid ja saadame neid andmebaasi, kui kõik korras
 	
 	global $nimi, $firma, $telefon, $email, $muuYritus, $koht, $hind, $kommentaar, $kuup2ev, $yritus;
 	global $nimiError, $emailError, $telefonError, $telefonError2, $kuup2evError;
@@ -25,6 +25,7 @@ function andmeteSaatmine(){
 	global $link;
 	$errors = Array();
 
+	// Kontrollime...
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		if (empty($_POST["nimi"])) {
 			$nimiError = "Kirjutage oma nime";
@@ -71,6 +72,7 @@ function andmeteSaatmine(){
 			$hind = mysqli_real_escape_string($link, $_POST["hind"]);
 			$kommentaar = mysqli_real_escape_string($link, $_POST["kommentaar"]);
 			
+			// Saadame andmebaasi...
 			$sql = "INSERT INTO Svetlana_Jugai_10142864 (nimi, firma, telefon, email, yritus, muuYritus, koht, kuup2ev, hind, kommentaar) VALUES ('$nimi', '$firma', '$telefon', '$email', '$yritus', '$muuYritus', '$koht', '$kuup2ev', '$hind', '$kommentaar')";
 			$result = mysqli_query($link, $sql) or die($sql . " - " . mysqli_error($link));
 			
@@ -84,38 +86,14 @@ function andmeteSaatmine(){
 	}
 }
 
-function test($data) {
+function test($data) { // Andmete kontroll
 	$data = trim($data);
 	$data = stripslashes($data);
 	$data = htmlspecialchars($data);
 	return $data;
 }
 
-function login(){
-	global $kasutaja, $parool;
-	global $kasutajaError, $paroolError;
-	$errors = array();
-	
-	if($_SERVER["REQUEST_METHOD"] == "POST"){
-		if(empty($_POST["kasutaja"]) || htmlspecialchars($_POST["kasutaja"]) != "TJ"){
-			$kasutajaError = "Vale kasutajanimi!";
-			$errors[] = $kasutajaError;
-		}
-		if(empty($_POST["parool"]) || htmlspecialchars($_POST["parool"]) != "TJP"){
-			$paroolError = "Vale parool!";
-			$errors[] = $paroolError;
-		}
-		
-		if(empty($errors)){
-			if(htmlspecialchars($_POST["kasutaja"]) == "TJ" && htmlspecialchars($_POST["parool"]) == "TJP"){
-				header("Location: kontroller.php?mode=sisselogitud");
-				exit(0);				
-			}
-		}
-	}
-}
-
-function kuva_pilte() {
+function kuva_pilte() { // Kuvame ekraani peale pilte andmebaasist
 	global $link;
 	global $ridu;
 	$pildid = Array();
