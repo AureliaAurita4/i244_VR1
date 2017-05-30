@@ -1,3 +1,4 @@
+/* Üldine kujundus */
 body {
 	background: #090909;
 	font-family: Arial, Helvetica, sans-serif;
@@ -14,11 +15,6 @@ html, body {
 div {
 	margin: 10px;
 	border: none;
-}
-
-#hinnapak{
-	margin-bottom: 20px;
-	text-align: center;
 }
 
 .splash_pic {
@@ -38,45 +34,6 @@ div {
 	padding-bottom: 50px;
 }
 
-.line1 {
-	background: url(Pildid/pic_line.png) repeat-x center 0;
-	height: 11px;
-	position: absolute;
-	bottom: 0;
-	width: 100%;
-	z-index: 55;
-}
-
-.button {
-	list-style-type: none;
-	float: left;
-	
-	margin-left: 10px;
-	padding: 0;
-}
-
-#buttons{
-	margin: auto;
-	position: relative;
-    top: 50%; 
-    left: 40%;
-}
-
-select {
-	width: 13em;
-}
-
-.vajalik {
-	color: red;
-}
-
-h1 {
-	display: inline-block;
-	position: relative;
-	z-index: 99;
-	padding: 36px 0 30px 0;
-	margin-left: 15px
-}
 #logo {
 	height: 64px;
 	width: 474px;
@@ -87,6 +44,15 @@ h1 {
     margin-right: auto;
 	margin-top: 30px;
 }
+
+h1 {
+	display: inline-block;
+	position: relative;
+	z-index: 99;
+	padding: 36px 0 30px 0;
+	margin-left: 15px
+}
+
 h2 {
 	font-family: 'Righteous', cursive;
 	font-size: 48px;
@@ -96,6 +62,7 @@ h2 {
 	padding-bottom: 18px;
 	color: #c7c7c7;
 }
+
 h3 {
 	font-family: 'Righteous', cursive;
 	font-size: 48px;
@@ -115,12 +82,20 @@ h4 {
 	font-weight: 700;
 	text-transform: uppercase;
 	display: inline-block;
-	
 }
 
 header{
 	text-align: center;
 	margin-top: 10px;
+}
+
+footer {
+	margin: 7px 3px;
+	text-align: center;
+	text-transform: uppercase;
+	color: #262626;
+	font-family: 'Galdeano', sans-serif;
+	font-weight: bold;
 }
 
 #menu {
@@ -149,7 +124,35 @@ header{
 	width: 300px;
 	margin: auto;
 	margin-top: 40px;
+}
+
+/* Hinnapakkumise leht */
+#hinnapak{
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+.button {
+	list-style-type: none;
+	float: left;
 	
+	margin-left: 10px;
+	padding: 0;
+}
+
+#buttons{
+	margin: auto;
+	position: relative;
+    top: 50%; 
+    left: 40%;
+}
+
+select {
+	width: 13em;
+}
+
+.vajalik {
+	color: red;
 }
 
 form {
@@ -157,24 +160,7 @@ form {
 	text-align: center;	
 }
 
-footer {
-	margin: 7px 3px;
-	text-align: center;
-	text-transform: uppercase;
-	color: #262626;
-	font-family: 'Galdeano', sans-serif;
-	font-weight: bold;
-}
-
-#sisselogimine li {
-	display:inline-block;
-}
-
-#sisselogimine {
-	float: right;
-	margin-top: 0;
-}
-
+/* Piltide leht */
 #galerii {
 	margin-top: 20px;
 }
@@ -209,7 +195,6 @@ td img {
     max-width: 700px;
 	position: relative;
 	padding: 0;
-
 }
 
 #pilt {
