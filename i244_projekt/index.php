@@ -16,15 +16,6 @@ switch($mode){
 		kuva_pilte();
 	break;
 	
-	case "lisa_pilte":
-		include("lisa_pilte.html");
-	break;
-	
-	case "sisselogitud":
-		
-		include("login.html");
-	break;
-	
 	case "hinnapakkumine":
 		andmeteSaatmine();
 		include("hinnapakkumine.html");
