@@ -166,18 +166,10 @@ footer {
 	font-weight: bold;
 }
 
-#sisselogimine li {
-	display:inline-block;
-}
-
-#sisselogimine {
-	float: right;
-	margin-top: 0;
-}
-
 .galerii {
 	margin-top: 20px;
-	align: center;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 tr, td {

@@ -12,8 +12,7 @@
 		<?php if (!empty($pildid)):
 			foreach($pildid as $id=>$pilt1):
 		?>
-		
-			<td><img class="pilt" src="<?php echo htmlspecialchars($pilt1['pilt']);?>" alt="<?php echo htmlspecialchars($pilt1['nimi']);?>" onclick="openModal();currentSlide(<?php echo htmlspecialchars($pilt1['id']); ?>)"></td>
+	<td><img class="pilt" src="<?php echo htmlspecialchars($pilt1['pilt']);?>" alt="<?php echo htmlspecialchars($pilt1['nimi']);?>" onclick="openModal();currentSlide(<?php echo htmlspecialchars($pilt1['id']); ?>)"></td>
 			
 		<?php endforeach;
 		endif;
@@ -29,7 +28,7 @@
 				foreach($pildid as $id=>$pilt1):
 			?>
 				<div class="mySlides">
-					<img class="mySlidesCss" src="<?php echo htmlspecialchars($pilt1['pilt']);?>">
+					<img class="mySlidesCss" src="<?php echo htmlspecialchars($pilt1['pilt']);?>" alt="<?php echo htmlspecialchars($pilt1['nimi']);?>">
 				</div>
 			<?php endforeach;
 			endif;

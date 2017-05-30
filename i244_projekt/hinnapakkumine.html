@@ -54,7 +54,7 @@
 		</div>
 		
 		<div class="vajalik">
-			<input type="date" name="kuup2ev" placeholder="Kuupäev: YYYY-MM-DD"><span class="error">* <?php echo isset($kuup2evError) ? $kuup2evError : ''; ?></span>
+			<input type="date" name="kuup2ev"><span class="error">* <?php echo isset($kuup2evError) ? $kuup2evError : ''; ?></span>
 		</div>
 		
 		<div>
@@ -62,7 +62,7 @@
 		</div>
 		
 		<div>
-			<textarea name="kommentaar" rows="10" cols="30" placeholder="Kirjutage soovitusi repertuaari kohta" value="<?php echo isset($kommentaar) ? $kommentaar : ''; ?>"></textarea>
+			<textarea name="kommentaar" rows="10" cols="30" placeholder="Kirjutage soovitusi repertuaari kohta"></textarea>
 		</div>
 		
 		<div class="vajalik">
@@ -77,6 +77,7 @@
 				<li class="button">
 					<button type="reset">Tühista</button>
 				</li>
+			</ul>
 		</div>
 	</form><br>
 </section>
