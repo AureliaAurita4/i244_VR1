@@ -15,10 +15,6 @@ switch($mode){
 	case "pildid":
 		kuva_pilte();
 	break;
-	
-	case "lisa_pilte":
-		include("lisa_pilte.html");
-	break;
 
 	case "hinnapakkumine":
 		andmeteSaatmine();
