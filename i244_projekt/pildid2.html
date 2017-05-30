@@ -6,37 +6,38 @@
 		<h4>Pildigalerii</h4>
 	</header>
 
-<!-- Pildid lehel tabelina -->
-<table id="galerii" align="center">
-	
-	<?php if (!empty($pildid)):
-		foreach($pildid as $id=>$pilt1):
-	?>
-	
-		<td><img id="pilt" src="<?php echo htmlspecialchars($pilt1['pilt']);?>" alt="<?php echo htmlspecialchars($pilt1['nimi']);?>" onclick="openModal();currentSlide(<?php echo htmlspecialchars($pilt1['id']); ?>)"></td>
+	<!-- Pildid lehel tabelina -->
+	<table class="galerii">
 		
-	<?php endforeach;
-	endif;
-	?>
-	
+		<?php if (!empty($pildid)):
+			foreach($pildid as $id=>$pilt1):
+		?>
+		
+			<td><img class="pilt" src="<?php echo htmlspecialchars($pilt1['pilt']);?>" alt="<?php echo htmlspecialchars($pilt1['nimi']);?>" onclick="openModal();currentSlide(<?php echo htmlspecialchars($pilt1['id']); ?>)"></td>
+			
+		<?php endforeach;
+		endif;
+		?>
+	</table>
+
 	<!-- Suurendatud pildid avatuna modalis slideshow kujul -->
 	<div id="myModal">
 		<span class="close cursor" onclick="closeModal()">&times;</span>
 		<div class="modal-content">
 		
-		<?php if (!empty($pildid)):
-			foreach($pildid as $id=>$pilt1):
-		?>
-			<div class="mySlides">
-				<img src="<?php echo htmlspecialchars($pilt1['pilt']);?>" style="width:100%">
-			</div>
-		<?php endforeach;
-		endif;
-		?>
-		
-		<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-		<a class="next" onclick="plusSlides(1)">&#10095;</a>
-		
-	</table>
+			<?php if (!empty($pildid)):
+				foreach($pildid as $id=>$pilt1):
+			?>
+				<div class="mySlides">
+					<img class="mySlidesCss" src="<?php echo htmlspecialchars($pilt1['pilt']);?>">
+				</div>
+			<?php endforeach;
+			endif;
+			?>
+			
+			<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+			<a class="next" onclick="plusSlides(1)">&#10095;</a>
+		</div>	
+	</div>
 </section>
 <script src="javaScript.js"></script>

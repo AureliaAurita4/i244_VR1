@@ -1,0 +1,262 @@
+body {
+	background: #090909;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	line-height: 1.2em;
+	color: #505050;
+	min-width: 1027px;
+}
+
+html, body {
+	height: 100%;
+}
+
+div {
+	margin: 10px;
+	border: none;
+}
+
+#hinnapak{
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+.splash_pic {
+	background: url(Pildid/svadba_viki_web_splash.jpg) no-repeat center 0;
+	position: relative;
+	height: 700px
+}
+
+.content_pic {
+	background: url(Pildid/svadba_viki_web_splash.jpg) no-repeat center 0;
+	position: relative;
+	height: 466px
+}
+
+.content_holder {
+	background: #DCDCDC;
+	padding-bottom: 50px;
+}
+
+.line1 {
+	background: url(Pildid/pic_line.png) repeat-x center 0;
+	height: 11px;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	z-index: 55;
+}
+
+.button {
+	list-style-type: none;
+	float: left;
+	
+	margin-left: 10px;
+	padding: 0;
+}
+
+#buttons{
+	margin: auto;
+	position: relative;
+    top: 50%; 
+    left: 40%;
+}
+
+select {
+	width: 13em;
+}
+
+.vajalik {
+	color: red;
+}
+
+h1 {
+	display: inline-block;
+	position: relative;
+	z-index: 99;
+	padding: 36px 0 30px 0;
+	margin-left: 15px
+}
+#logo {
+	height: 64px;
+	width: 474px;
+	background: url(Pildid/logo.png) no-repeat center 0;
+	text-indent: -5000px;
+	display: block;
+	margin-left: auto;
+    margin-right: auto;
+	margin-top: 30px;
+}
+h2 {
+	font-family: 'Righteous', cursive;
+	font-size: 48px;
+	line-height: 58px;
+	text-transform: uppercase;
+	display: block;
+	padding-bottom: 18px;
+	color: #c7c7c7;
+}
+h3 {
+	font-family: 'Righteous', cursive;
+	font-size: 48px;
+	line-height: 58px;
+	text-transform: uppercase;
+	display: block;
+	padding: 20px 0 0 35px;
+	color: #fff;
+	display: inline-block;
+}
+
+h4 {
+	font-family: 'Galdeano', sans-serif;
+	font-size: 20px;
+	line-height: 20px;
+	color: #262626;
+	font-weight: 700;
+	text-transform: uppercase;
+	display: inline-block;
+	
+}
+
+header{
+	text-align: center;
+	margin-top: 10px;
+}
+
+#menu {
+	margin: 0px;
+	padding: 0px;
+}
+
+#menu li {
+	display: inline-block;
+}
+
+#menu a {
+	color: white;
+	text-transform: uppercase;
+	font-weight: bold;
+	display: inline-block;
+	padding: 5px;
+	text-decoration: none;
+}
+
+#menu a:hover {
+	color: #fea800;
+}
+
+#wrap {
+	width: 300px;
+	margin: auto;
+	margin-top: 40px;
+	
+}
+
+form {
+	margin: auto;
+	text-align: center;	
+}
+
+footer {
+	margin: 7px 3px;
+	text-align: center;
+	text-transform: uppercase;
+	color: #262626;
+	font-family: 'Galdeano', sans-serif;
+	font-weight: bold;
+}
+
+#sisselogimine li {
+	display:inline-block;
+}
+
+#sisselogimine {
+	float: right;
+	margin-top: 0;
+}
+
+.galerii {
+	margin-top: 20px;
+	align: center;
+}
+
+tr, td {
+	padding: 8px;
+}
+
+td img {
+	width: 200px;
+	height:128px;
+}
+
+#myModal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.9);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+	position: relative;
+	padding: 0;
+
+}
+
+.pilt {
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.pilt:hover {
+	opacity: 0.9;
+	box-shadow: 7px 7px 3px grey;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+	cursor: pointer;
+	font-family: 'Galdeano', sans-serif;
+    font-size: 40px;
+}
+
+.mySlides {
+	display: none;
+}
+
+.mySlidesCss {
+	width: 100%;
+}
+
+.prev,
+.next {
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	width: auto;
+	padding: 16px;
+	margin-top: -50px;
+	color: white;
+	font-weight: bold;
+	font-size: 20px;
+	transition: 0.6s ease;
+	border-radius: 0 3px 3px 0;
+}
+
+.next {
+	right: 0;
+	border-radius: 3px 0 0 3px;
+}
