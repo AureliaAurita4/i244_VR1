@@ -2,19 +2,7 @@
 		Loo lihtsustatud enampakkumise s?steem. Kasutajad saavad teha pakkumisi. Kuva parima pakkuja nime ja summat. -->
 
 <?php
-session_start();
-
-if(empty($_COOKIE["mingiKasutaja"])){
-	setcookie("mingiKasutaja", time(), time() + 60 * 15, "/");
-}
-
-$user="test";
-$host="localhost";
-$pass="t3st3r123";
-$db="test";
-$link = mysqli_connect($host, $user, $pass, $db) or die("Ei saa ühendada!");
-mysqli_query($link, "SET CHARACTER SET UTF8");
-
+include("1.php");
 ?>
 
 <!DOCTYPE html>
@@ -76,12 +64,7 @@ mysqli_query($link, "SET CHARACTER SET UTF8");
 		</form>
 		
 		<?php
-		if(isset($_GET["lisa"]) && !empty($_POST['nimi']) && !empty($_POST['pakkumine'])){
-			$nimi = mysqli_real_escape_string($link, $_POST['nimi']);
-			$pakkumine = mysqli_real_escape_string($link, $_POST['pakkumine']);
-			$sql = "INSERT INTO Svetlana_Jugai_pakkumised (nimi, pakkumine) VALUES ('$nimi', '$pakkumine')";
-			$result = mysqli_query($link, $sql) or die("Ei saa andmeid andmebaasi saata");
-		}
+		include("2.php");
 		?>
 		
 			<form id="kuvamine" action="?kuva" method="POST">
@@ -89,12 +72,7 @@ mysqli_query($link, "SET CHARACTER SET UTF8");
 			</form>
 		
 		<?php
-		if(isset($_GET["kuva"])){
-			$pakkumised = array();
-			$sql = "SELECT nimi, pakkumine FROM Svetlana_Jugai_pakkumised ORDER BY pakkumine DESC LIMIT 0,1";
-			$result = mysqli_query($link, $sql) or die("Ei saa näidata pakkumisi");
-			echo " - parim pakkumine".print_r(mysqli_fetch_assoc($result));
-		}
+		include("3.php");
 		?>
 	</body>
 </html>
