@@ -12,7 +12,7 @@ $user="test";
 $host="localhost";
 $pass="t3st3r123";
 $db="test";
-$link = mysqli_connect($host, $user, $pass, $db) or die("Ei saa ?hendada!");
+$link = mysqli_connect($host, $user, $pass, $db) or die("Ei saa ühendada!");
 mysqli_query($link, "SET CHARACTER SET UTF8");
 
 ?>
@@ -49,9 +49,8 @@ mysqli_query($link, "SET CHARACTER SET UTF8");
 			$nimi = mysqli_real_escape_string($link, $_POST['nimi']);
 			$pakkumine = mysqli_real_escape_string($link, $_POST['pakkumine']);
 			$sql = "INSERT INTO Svetlana_Jugai_pakkumised (nimi, pakkumine) VALUES ('$nimi', '$pakkumine')";
-			$result = mysqli_query($link, $sql) or die($sql." - ".mysqli_error($link));
+			$result = mysqli_query($link, $sql) or die("Ei saa andmeid andmebaasi saata");
 		}
-		
 		?>
 		
 		<form id="kuvamine" action="?kuva" method="POST">
@@ -61,11 +60,12 @@ mysqli_query($link, "SET CHARACTER SET UTF8");
 		<?php
 		if(isset($_GET["kuva"])){
 			$pakkumised = array();
-			$sql = "SELECT * FROM Svetlana_Jugai_pakkumised";
+			$sql = "SELECT * FROM Svetlana_Jugai_pakkumised ORDER BY pakkumine DESC";
 			$result = mysqli_query($link, $sql) or die("Ei saa näidata pakkumisi");
-		
-			while($rida = mysqli_fetch_assoc($result)){
-				$pakkumised[] = $rida;
+			$ridu = mysqli_num_rows($result);
+			
+			for($i = 0; $i < $ridu; $i++){
+				$pakkumised[] = mysqli_fetch_assoc($result);
 			}
 		}
 		?>
@@ -75,8 +75,7 @@ mysqli_query($link, "SET CHARACTER SET UTF8");
 		?>
 		<div><?php echo  htmlspecialchars($pakkumine['pakkumine']); ?></div>
 		<?php endforeach;
-		endif;
-		?>
+		endif;?>
 		
 	</body>
 </html>
