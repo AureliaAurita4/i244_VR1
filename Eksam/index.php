@@ -40,7 +40,6 @@ mysqli_query($link, "SET CHARACTER SET UTF8");
 				max-width:47px;
 				margin-top: 10px;
 				margin-left: 10px;
-				display: none;
 			}
 			
 			#saatmine:hover {
@@ -55,7 +54,6 @@ mysqli_query($link, "SET CHARACTER SET UTF8");
 			
 			#lisamine {
 				margin-left: 40px;
-				display: none;
 			}
 			
 			#kuva-vorm {
@@ -68,10 +66,6 @@ mysqli_query($link, "SET CHARACTER SET UTF8");
 	
 	<body>
 		<h1>Pakkumiste leht</h1>
-		
-		<p id="kuva-vorm">
-			<button id="kuva-nupp" type="button">Lisa oma pakkumise</button>
-		</p>
 		
 		<form id="lisamine" action="?lisa" method="POST">
 			<label>Sinu nimi:</label>
@@ -90,9 +84,9 @@ mysqli_query($link, "SET CHARACTER SET UTF8");
 		}
 		?>
 		
-		<form id="kuvamine" action="?kuva" method="POST">
-			<div><input type="submit" value="Näita"></div>
-		</form>
+			<form id="kuvamine" action="?kuva" method="POST">
+				<div><input type="submit" value="Näita"></div>
+			</form>
 		
 		<?php
 		if(isset($_GET["kuva"])){
@@ -102,7 +96,5 @@ mysqli_query($link, "SET CHARACTER SET UTF8");
 			echo " - parim pakkumine".print_r(mysqli_fetch_assoc($result));
 		}
 		?>
-		
-		<script src="javascript.js"></script>
 	</body>
 </html>
