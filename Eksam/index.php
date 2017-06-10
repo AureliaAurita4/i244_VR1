@@ -28,6 +28,38 @@ mysqli_query($link, "SET CHARACTER SET UTF8");
 				font-family: 'Galdeano';
 				font-weight: bold;
 				color: #66ccff;
+				margin-left: 20px;
+			}
+			
+			#kuvamine:hover {
+				cursor: pointer;
+				box-shadow: 3px 3px 1px grey;
+			}
+			
+			#kuvamine {
+				max-width:47px;
+				margin-top: 10px;
+				margin-left: 10px;
+				display: none;
+			}
+			
+			#saatmine:hover {
+				cursor: pointer;
+				box-shadow: 3px 3px 1px grey;
+			}
+			
+			#saatmine {
+				margin-top: 10px;
+				margin-left: 10px;
+			}
+			
+			#lisamine {
+				margin-left: 40px;
+				display: none;
+			}
+			
+			#kuva-vorm {
+				margin-left: 40px;
 			}
 			
 		</style>
@@ -37,11 +69,16 @@ mysqli_query($link, "SET CHARACTER SET UTF8");
 	<body>
 		<h1>Pakkumiste leht</h1>
 		
+		<p id="kuva-vorm">
+			<button id="kuva-nupp" type="button">Lisa oma pakkumise</button>
+		</p>
+		
 		<form id="lisamine" action="?lisa" method="POST">
-			<div><input type="text" name="nimi" placeholder="Sinu nimi"></div>
+			<label>Sinu nimi:</label>
+			<div><input type="text" name="nimi"></div>
 			<label>Sinu pakkumine:</label>
 			<div><input type="number" name="pakkumine"</div>
-			<div><input type="submit" value="Saada"></div>
+			<div><input id="saatmine" type="submit" value="Saada"></div>
 		</form>
 		
 		<?php
@@ -66,7 +103,6 @@ mysqli_query($link, "SET CHARACTER SET UTF8");
 		}
 		?>
 		
+		<script src="javascript.js"></script>
 	</body>
 </html>
-
-<!-- ." pakkumine ".print_r(mysqli_fetch_assoc($result)['pakkumine'])." oli parim." -->
