@@ -60,22 +60,13 @@ mysqli_query($link, "SET CHARACTER SET UTF8");
 		<?php
 		if(isset($_GET["kuva"])){
 			$pakkumised = array();
-			$sql = "SELECT * FROM Svetlana_Jugai_pakkumised ORDER BY pakkumine DESC";
+			$sql = "SELECT nimi, pakkumine FROM Svetlana_Jugai_pakkumised ORDER BY pakkumine DESC LIMIT 0,1";
 			$result = mysqli_query($link, $sql) or die("Ei saa näidata pakkumisi");
-			$ridu = mysqli_num_rows($result);
-			
-			for($i = 0; $i < $ridu; $i++){
-				$pakkumised[] = mysqli_fetch_assoc($result);
-			}
+			echo " - parim pakkumine".print_r(mysqli_fetch_assoc($result));
 		}
 		?>
 		
-		<?php if (!empty($pakkumised)):
-		foreach($pakkumised as $id=>$pakkumine):
-		?>
-		<div><?php echo  htmlspecialchars($pakkumine['pakkumine']); ?></div>
-		<?php endforeach;
-		endif;?>
-		
 	</body>
 </html>
+
+<!-- ." pakkumine ".print_r(mysqli_fetch_assoc($result)['pakkumine'])." oli parim." -->
