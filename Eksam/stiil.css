@@ -1,0 +1,35 @@
+h1 {
+	font-family: 'Galdeano';
+	font-weight: bold;
+	color: #66ccff;
+	margin-left: 20px;
+}
+
+#kuvamine:hover {
+	cursor: pointer;
+	box-shadow: 3px 3px 1px grey;
+}
+
+#kuvamine {
+	max-width:47px;
+	margin-top: 10px;
+	margin-left: 10px;
+}
+
+#saatmine:hover {
+	cursor: pointer;
+	box-shadow: 3px 3px 1px grey;
+}
+
+#saatmine {
+	margin-top: 10px;
+	margin-left: 10px;
+}
+
+#lisamine {
+	margin-left: 40px;
+}
+
+#kuva-vorm {
+	margin-left: 40px;
+}
